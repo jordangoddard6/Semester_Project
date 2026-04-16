@@ -82,5 +82,5 @@ export interface DistanceTrackerForm {
   gateNumber: string;
   airport: string;
   bathroomStop: boolean;
-  stopForTreat: boolean;
+  waitForBags: boolean;
 }
