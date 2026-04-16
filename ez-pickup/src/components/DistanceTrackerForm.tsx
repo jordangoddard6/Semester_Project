@@ -62,7 +62,7 @@ export default function DistanceTrackerForm() {
         />
       </div>
 
-      <div className="flex gap-6">
+      <div className="flex flex-wrap gap-x-6 gap-y-3">
         <label className="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
           <input
             type="checkbox"

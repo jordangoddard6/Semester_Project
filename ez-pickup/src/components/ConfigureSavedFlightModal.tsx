@@ -119,9 +119,9 @@ export default function ConfigureSavedFlightModal({ onSave, onClose, flightToEdi
       className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="bg-white rounded-xl w-full max-w-md shadow-xl" role="dialog" aria-modal="true">
+      <div className="bg-white rounded-xl w-full max-w-md shadow-xl max-h-[90vh] flex flex-col" role="dialog" aria-modal="true">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-slate-100">
+        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-slate-100 shrink-0">
           <h2 className="text-lg font-semibold text-slate-900">
             {flightToEdit ? 'Edit Flight' : 'Save a Flight'}
           </h2>
@@ -135,7 +135,7 @@ export default function ConfigureSavedFlightModal({ onSave, onClose, flightToEdi
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} noValidate className="px-6 py-5 space-y-4">
+        <form onSubmit={handleSubmit} noValidate className="px-6 py-5 space-y-4 overflow-y-auto">
           {/* Flight Number */}
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">
@@ -166,7 +166,7 @@ export default function ConfigureSavedFlightModal({ onSave, onClose, flightToEdi
           </div>
 
           {/* Airports */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Departure</label>
               <select
@@ -198,7 +198,7 @@ export default function ConfigureSavedFlightModal({ onSave, onClose, flightToEdi
           </div>
 
           {/* Gates (optional) */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Dep. Gate{' '}
@@ -228,7 +228,7 @@ export default function ConfigureSavedFlightModal({ onSave, onClose, flightToEdi
           </div>
 
           {/* Scheduled times (optional) */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Scheduled Departure{' '}

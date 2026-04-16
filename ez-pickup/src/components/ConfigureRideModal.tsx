@@ -121,9 +121,9 @@ export default function ConfigureRideModal({ onSave, onClose, rideToEdit }: Prop
       className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="bg-white rounded-xl w-full max-w-md shadow-xl" role="dialog" aria-modal="true">
+      <div className="bg-white rounded-xl w-full max-w-md shadow-xl max-h-[90vh] flex flex-col" role="dialog" aria-modal="true">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-slate-100">
+        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-slate-100 shrink-0">
           <h2 className="text-lg font-semibold text-slate-900">
             {rideToEdit ? 'Edit Ride' : 'Add a Ride'}
           </h2>
@@ -137,9 +137,9 @@ export default function ConfigureRideModal({ onSave, onClose, rideToEdit }: Prop
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} noValidate className="px-6 py-5 space-y-4">
+        <form onSubmit={handleSubmit} noValidate className="px-6 py-5 space-y-4 overflow-y-auto">
           {/* Person + Type */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Person's Name
@@ -168,7 +168,7 @@ export default function ConfigureRideModal({ onSave, onClose, rideToEdit }: Prop
           </div>
 
           {/* Flight + Date */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Flight Number
@@ -197,7 +197,7 @@ export default function ConfigureRideModal({ onSave, onClose, rideToEdit }: Prop
           </div>
 
           {/* Airports */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">From</label>
               <select
@@ -229,7 +229,7 @@ export default function ConfigureRideModal({ onSave, onClose, rideToEdit }: Prop
           </div>
 
           {/* Gate + Drive Time */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Gate{' '}
